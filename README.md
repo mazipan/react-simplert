@@ -1,7 +1,10 @@
 # react-simplert
 ReactJS Simple Alert Component (SweetAlert Inspired)
 
-![react-simplert](https://mazipan.github.io/react-simplert/images/react-simplert.png)
+[![react-simplert](https://mazipan.github.io/react-simplert/images/react-simplert.png)](https://mazipan.github.io/react-simplert/)
+
+## Demo
+[https://mazipan.github.io/react-simplert/](https://mazipan.github.io/react-simplert/)
 
 ## Download
 ```
