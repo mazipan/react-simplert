@@ -1,7 +1,17 @@
 # react-simplert
-ReactJS Simple Alert Component (SweetAlert Inspired)
+
+[![License](https://img.shields.io/github/license/mazipan/react-simplert.svg?maxAge=3600)](https://github.com/mazipan/react-simplert) 
+[![Github Issue](https://img.shields.io/github/issues/mazipan/react-simplert.svg?maxAge=3600)](https://github.com/mazipan/react-simplert/issues) 
+[![GitHub Fork](https://img.shields.io/github/forks/mazipan/react-simplert.svg?maxAge=3600)](https://github.com/mazipan/react-simplert/network) 
+[![GitHub Star](https://img.shields.io/github/stars/mazipan/react-simplert.svg?maxAge=3600)](https://github.com/mazipan/react-simplert/stargazers) 
+
+[![version](https://img.shields.io/npm/v/react-simplert.svg)](https://www.npmjs.com/package/react-simplert)
+[![downloads monthly](https://img.shields.io/npm/dm/react-simplert.svg)](https://www.npmjs.com/package/react-simplert) 
+[![downloads](https://img.shields.io/npm/dt/react-simplert.svg)](https://www.npmjs.com/package/react-simplert) 
 
 [![react-simplert](https://mazipan.github.io/react-simplert/images/react-simplert.png)](https://mazipan.github.io/react-simplert/)
+
+ReactJS Simple Alert Component (SweetAlert Inspired)
 
 ## Demo
 [https://mazipan.github.io/react-simplert/](https://mazipan.github.io/react-simplert/)
