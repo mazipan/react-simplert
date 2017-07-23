@@ -24,42 +24,57 @@ class App extends React.Component {
     let { openAlert } = this
 
     return(
-      <div>
+
+      <div className="grid__row content centered">
+        <h2>Example</h2>
+
         <Simplert 
             showSimplert={ showAlert }
             type={ typeAlert }
             title={ titleAlert }
             message={ messageAlert }
         />
-          <div class="main">
-          
-          <h1>React Simplert</h1>
-          
-            <div class="button-container">
-              <button type="button" 
-                      className="btn-demo"
-                      onClick={ openAlert.bind(this, "Title", "Message", "info") }>
-                      Open Info Alert
-              </button>
-              <button type="button" 
-                      className="btn-demo"
-                      onClick={ openAlert.bind(this, "Title", "Message <b>HTML</b>", "success") }>
-                      Open Success Alert
-              </button>
-              <button type="button" 
-                      className="btn-demo"
-                      onClick={ openAlert.bind(this, "Title", "Message", "warning") }>
-                      Open Warning Alert
-              </button>
-              <button type="button" 
-                      className="btn-demo"
-                      onClick={ openAlert.bind(this, "Title", "Message", "error") }>
-                      Open Error Alert
-              </button>
-            </div>
 
+        <div className="grid__row content centered"> 
+
+          <div className="grid__row content__row">
+            <div className="grid__col-3 example__title">Information Alert</div>
+            <div className="grid__col-3">
+              <button className="button button--radius button--blue"
+                    onClick={ openAlert.bind(this, "Title", "Message with <b>HTML</b>", "info") }>
+                    Click Me!
+              </button>  
+            </div>     
+
+            <div className="grid__col-3 example__title">Success Alert</div>
+            <div className="grid__col-3">
+              <button className="button button--radius button--green"
+                    onClick={ openAlert.bind(this, "Title", "Message with <b>HTML</b>", "success") }>
+                    Click Me!
+              </button>   
+            </div>       
           </div>
-          <br/>
+
+          <div className="grid__row content__row">
+            <div className="grid__col-3 example__title">Warning Alert</div>
+            <div className="grid__col-3">
+              <button className="button button--radius button--orange"
+                    onClick={ openAlert.bind(this, "Title", "Message with <b>HTML</b>", "warning") }>
+                    Click Me!
+              </button>  
+            </div>     
+
+            <div className="grid__col-3 example__title">Error Alert</div>
+            <div className="grid__col-3">
+              <button className="button button--radius button--red"
+                    onClick={ openAlert.bind(this, "Title", "Message with <b>HTML</b>", "error") }>
+                    Click Me!
+              </button>   
+            </div>       
+          </div>
+
+        </div>
+          
       </div>
     )
   }

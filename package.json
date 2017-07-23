@@ -13,10 +13,10 @@
     "url": "git+https://github.com/mazipan/react-simplert.git"
   },
   "keywords": [
-    "web-components",
-    "react",
-    "component",
-    "react js"
+    "react alert",
+    "react sweatalert",
+    "react simple alert",
+    "react simplert"
   ],
   "author": "Irfan Maulana <mazipanneh@gmail.com>",
   "license": "MIT",
