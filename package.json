@@ -5,7 +5,7 @@
   "main": "./src/simplert.js",
   "style": "./src/simplert.sass",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
+    "dev": "webpack -p && webpack-dev-server --inline --hot",
     "build": "webpack -p"
   },
   "repository": {

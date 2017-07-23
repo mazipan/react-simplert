@@ -11,26 +11,50 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      showAlert: false
+      showAlert: false,
+      typeAlert: 'success',
+      titleAlert: 'This is Title',
+      messageAlert: 'I am message alert'
     }
   }
 
   render(){
 
-    let { showAlert } = this.state
-    let { toggleAlert } = this
+    let { showAlert, typeAlert, titleAlert, messageAlert } = this.state
+    let { openAlert } = this
 
     return(
       <div>
-        <Simplert />
+        <Simplert 
+            showSimplert={ showAlert }
+            type={ typeAlert }
+            title={ titleAlert }
+            message={ messageAlert }
+        />
           <div class="main">
           
-          <h1>React</h1>
+          <h1>React Simplert</h1>
           
             <div class="button-container">
               <button type="button" 
-                      onClick={ toggleAlert.bind(this) }>
-                      Open Alert
+                      className="btn-demo"
+                      onClick={ openAlert.bind(this, "Title", "Message", "info") }>
+                      Open Info Alert
+              </button>
+              <button type="button" 
+                      className="btn-demo"
+                      onClick={ openAlert.bind(this, "Title", "Message <b>HTML</b>", "success") }>
+                      Open Success Alert
+              </button>
+              <button type="button" 
+                      className="btn-demo"
+                      onClick={ openAlert.bind(this, "Title", "Message", "warning") }>
+                      Open Warning Alert
+              </button>
+              <button type="button" 
+                      className="btn-demo"
+                      onClick={ openAlert.bind(this, "Title", "Message", "error") }>
+                      Open Error Alert
               </button>
             </div>
 
@@ -41,9 +65,13 @@ class App extends React.Component {
   }
 
   // Events
-  toggleAlert(){
-    let { showAlert } = this.state
-    this.setState({ showAlert: !showAlert })
+  openAlert(title, message, type){
+    this.setState({ 
+      showAlert: true, 
+      titleAlert: title, 
+      messageAlert: message, 
+      typeAlert: type 
+    })
   }
 
 }

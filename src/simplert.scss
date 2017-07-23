@@ -1,10 +1,14 @@
-// html {
-//   -webkit-box-sizing: border-box;
-//   -moz-box-sizing: border-box;
-//   -o-box-sizing: border-box;
-//   -ms-box-sizing: border-box;
-// }
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 .simplert {
   font-size: 14px;
@@ -48,16 +52,15 @@
   padding: 0 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
 }
 @media only screen and (min-width: 768px) {
   .simplert__content {
     width: 30%;
   }
-}
-.simplert__content--radius {
-  -webkit-border-radius: 0.3em;
-  -moz-border-radius: 0.3em;
-  border-radius: 0.3em;
 }
 .simplert__body {
   padding-bottom: 1em;
@@ -183,8 +186,6 @@
   background-color: #068ac9;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-.simplert__close--radius, .simplert__confirm--radius {
   -webkit-border-radius: 0.3em;
   -moz-border-radius: 0.3em;
   border-radius: 0.3em;
