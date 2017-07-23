@@ -1,10 +1,56 @@
 # react-simplert
 ReactJS Simple Alert Component (SweetAlert Inspired)
 
-## UNDER DEVELOPMENT
+![react-simplert](https://mazipan.github.io/react-simplert/images/react-simplert.png)
 
-## CONTRIBUTOR NEEDED !!!
-**This Repository is Porting Vue2-Simplert to React Component**
+## Download
+```
+npm install react-simplert
+OR
+yarn add react-simplert
+```
+
+## How to Use
+
+Import to your component : 
+```javascript
+import Simplert from 'react-simplert'
+```
+
+Create some template in `render()` :
+```javascript
+<Simplert 
+    showSimplert={ this.state.showAlert }
+    type={ this.state.typeAlert }
+    title={ this.state.titleAlert }
+    message={ this.state.messageAlert }
+/>
+```
+Just set _the props_ with your custom state.
+
+## Available Props
+
+```javascript
+{
+  showSimplert: PropTypes.bool.isRequired,
+  title: PropTypes.string,
+  message: PropTypes.any,        
+  type: PropTypes.string,
+  customClass: PropTypes.string,
+  customIconUrl: PropTypes.string,
+  onOpen: PropTypes.func,
+  customCloseBtnText: PropTypes.string,
+  customCloseBtnClass: PropTypes.string,
+  onClose: PropTypes.func,
+  useConfirmBtn: PropTypes.bool,
+  customConfirmBtnText: PropTypes.string,
+  customConfirmBtnClass: PropTypes.string,
+  onConfirm: PropTypes.func,
+  disableOverlayClick: PropTypes.bool,
+  hideAllButton: PropTypes.bool
+}
+```
+
 
 
 **Hope will usefull for you all.**
