@@ -1,10 +1,10 @@
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 require('./app.scss')
 
-import Simplert from './simplert.js';
+import Simplert from './simplert.js'
 
 class App extends React.Component {
 

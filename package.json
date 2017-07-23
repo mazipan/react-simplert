@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "ReactJS Simple Alert Component (SweetAlert Inspired)",
   "main": "./src/simplert.js",
-  "style": "./src/simplert.sass",
+  "style": "./src/simplert.scss",
   "scripts": {
     "dev": "webpack -p && webpack-dev-server --inline --hot",
     "build": "webpack -p"
@@ -23,7 +23,15 @@
   "bugs": {
     "url": "https://github.com/mazipan/react-simplert/issues"
   },
-  "homepage": "https://github.com/mazipan/react-simplert#readme",
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "homepage": "https://github.com/mazipan/react-simplert#readme",  
+  "files": [
+    "src/simplert.js",
+    "src/simplert.scss"
+  ],
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^6.2.4",

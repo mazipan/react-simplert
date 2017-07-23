@@ -1,0 +1,15 @@
+node_modules
+.idea
+build
+favicon
+images
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.gitignore
+index.html
+yarn.lock
+src/App.vue
+src/custom-style.scss
+src/main.js
