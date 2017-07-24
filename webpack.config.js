@@ -1,38 +1,47 @@
 
 var webpack = require('webpack');
+var path = require('path');
+
 require('es6-promise').polyfill();
 
 module.exports = {
-
-  entry: './src/app.js',
-
+  entry: {
+    app: './src/app.js'
+  },  
   output: {
-    path: './build',
-    filename: 'build.js'
+    path: path.resolve(__dirname, 'build'),
+    filename: 'build.js',
+    publicPath: '/'
   },
-
+  devtool: '#cheap-module-eval-source-map',
+  devServer: {
+    hot: true,
+    contentBase: path.resolve(__dirname, ''),
+    publicPath: '/'
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.sass$/,
-        loaders: ['style','css', 'sass']
+        loaders: ['style-loader','css-loader', 'sass-loader']
       },
       {
         test: /\.scss$/,
-        loaders: ['style','css', 'sass']
+        loaders: ['style-loader','css-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': '"production"'
+        'NODE_ENV': '"development"'
       }
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 
 };

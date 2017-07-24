@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 
 require('./simplert.scss')
 
@@ -202,5 +203,4 @@ Simplert.defaultProps = {
   hideAllButton: false
 }
 
-
-export default Simplert;
+export default Simplert
