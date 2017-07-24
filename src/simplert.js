@@ -62,8 +62,7 @@ class Simplert extends React.Component {
 
     return(
 
-      <div className="simplert" role="modal" 
-           className={ this.classSimplert() }
+      <div role="modal" className={ this.classSimplert() }
            onClick={ closeOverlaySimplert.bind(this) }>
         <div className="simplert__content">
           <div className="simplert__header">

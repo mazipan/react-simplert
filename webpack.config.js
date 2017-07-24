@@ -41,6 +41,12 @@ module.exports = {
         'NODE_ENV': '"development"'
       }
     }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      sourceMap: false
+    }),
     new webpack.HotModuleReplacementPlugin()
   ]
 

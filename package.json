@@ -2,8 +2,10 @@
   "name": "react-simplert",
   "version": "0.0.2",
   "description": "ReactJS Simple Alert Component (SweetAlert Inspired)",
-  "main": "./src/simplert.js",
-  "style": "./src/simplert.scss",
+  "main": "./build/simplert.bundle.js",
+  "homepage": "https://github.com/mazipan/react-simplert#readme",
+  "author": "Irfan Maulana <mazipanneh@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dist": "webpack --config webpack.dist.config.js",
@@ -13,14 +15,6 @@
     "type": "git",
     "url": "git+https://github.com/mazipan/react-simplert.git"
   },
-  "keywords": [
-    "react alert",
-    "react sweatalert",
-    "react simple alert",
-    "react simplert"
-  ],
-  "author": "Irfan Maulana <mazipanneh@gmail.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mazipan/react-simplert/issues"
   },
@@ -28,7 +22,12 @@
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
   },
-  "homepage": "https://github.com/mazipan/react-simplert#readme",
+  "keywords": [
+    "react alert",
+    "react sweatalert",
+    "react simple alert",
+    "react simplert"
+  ],
   "files": [
     "src/simplert.js",
     "src/simplert.scss",
