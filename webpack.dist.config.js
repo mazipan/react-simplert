@@ -1,7 +1,8 @@
 
-var webpack = require('webpack');
-var path = require('path');
-var npm = require("./package.json");
+var webpack = require('webpack')
+var path = require('path')
+var npm = require("./package.json")
+const CompressionPlugin = require("compression-webpack-plugin")
 
 require('es6-promise').polyfill();
 
@@ -68,6 +69,9 @@ module.exports = {
     }),
     new webpack.BannerPlugin({
       banner: `React-Simplert v.${npm.version}\nIrfan Maulana (https://github.com/mazipan)`
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip'
     })
   ]
 
