@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 require('./simplert.scss')
@@ -17,7 +16,6 @@ class Simplert extends React.Component {
   render () {
     let { closeSimplert, closeOverlaySimplert, confirmSimplert } = this
     let {
-      showSimplert,
       title,
       message,
       type,
@@ -27,7 +25,6 @@ class Simplert extends React.Component {
       useConfirmBtn,
       hideAllButton
     } = this.props
-    let { isShowPopup } = this.state
 
     let iconDOM = null
     if (type === 'info') {
@@ -188,7 +185,7 @@ Simplert.propTypes = {
 const DEFAULT_TYPE = 'info'
 const DEFAULT_BTN_CLOSE_TEXT = 'Close'
 const DEFAULT_BTN_CONFIRM_TEXT = 'Confirm'
-const INVALID_TYPE = 'INVALID_TYPE'
+// const INVALID_TYPE = 'INVALID_TYPE'
 
 Simplert.defaultProps = {
   // hide/show alert

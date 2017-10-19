@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Simplert from './simplert.js'
 
 require('./app.scss')
-
-import Simplert from './simplert.js'
 
 class App extends React.Component {
   constructor () {
