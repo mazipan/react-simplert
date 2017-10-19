@@ -5,8 +5,7 @@ import PropTypes from 'prop-types'
 require('./simplert.scss')
 
 class Simplert extends React.Component {
-
-  constructor() {
+  constructor () {
     super()
 
     // Initial State
@@ -15,89 +14,101 @@ class Simplert extends React.Component {
     }
   }
 
-  render(){
-
+  render () {
     let { closeSimplert, closeOverlaySimplert, confirmSimplert } = this
-    let { showSimplert, title, message, type, 
-          customIconUrl, customCloseBtnText, customConfirmBtnText,
-          useConfirmBtn, hideAllButton } = this.props
+    let {
+      showSimplert,
+      title,
+      message,
+      type,
+      customIconUrl,
+      customCloseBtnText,
+      customConfirmBtnText,
+      useConfirmBtn,
+      hideAllButton
+    } = this.props
     let { isShowPopup } = this.state
 
     let iconDOM = null
     if (type === 'info') {
-      iconDOM = <div className="simplert__icon simplert__icon--info">
-                  <div className="simplert__line simplert__line--info">
-                  </div>
-                  <div className="simplert__line simplert__line--info-2">
-                  </div>
-                </div>
-              
+      iconDOM = (
+        <div className='simplert__icon simplert__icon--info'>
+          <div className='simplert__line simplert__line--info' />
+          <div className='simplert__line simplert__line--info-2' />
+        </div>
+      )
     } else if (type === 'success') {
-      iconDOM = <div className="simplert__icon simplert__icon--success">
-                  <div className="simplert__line simplert__line--success">
-                  </div>
-                  <div className="simplert__line simplert__line--success-2">
-                  </div>
-                </div>
-              
+      iconDOM = (
+        <div className='simplert__icon simplert__icon--success'>
+          <div className='simplert__line simplert__line--success' />
+          <div className='simplert__line simplert__line--success-2' />
+        </div>
+      )
     } else if (type === 'warning') {
-      iconDOM = <div className="simplert__icon simplert__icon--warning">
-                  <div className="simplert__line simplert__line--warning">
-                  </div>
-                  <div className="simplert__line simplert__line--warning-2">
-                  </div>
-                </div>
+      iconDOM = (
+        <div className='simplert__icon simplert__icon--warning'>
+          <div className='simplert__line simplert__line--warning' />
+          <div className='simplert__line simplert__line--warning-2' />
+        </div>
+      )
     } else if (type === 'error') {
-      iconDOM = <div className="simplert__icon simplert__icon--error">
-                  <div className="simplert__line simplert__line--error">
-                  </div>
-                  <div className="simplert__line simplert__line--error-2">
-                  </div>
-                </div>
+      iconDOM = (
+        <div className='simplert__icon simplert__icon--error'>
+          <div className='simplert__line simplert__line--error' />
+          <div className='simplert__line simplert__line--error-2' />
+        </div>
+      )
     } else if (customIconUrl) {
-      iconDOM = <div className="simplert__icon">
-                  <img src={ customIconUrl }/>
-                </div>
+      iconDOM = (
+        <div className='simplert__icon'>
+          <img src={customIconUrl} />
+        </div>
+      )
     }
 
-    return(
-
-      <div role="modal" className={ this.classSimplert() }
-           onClick={ closeOverlaySimplert.bind(this) }>
-        <div className="simplert__content">
-          <div className="simplert__header">
-            <div>
-              { iconDOM }
-            </div>
-            <b className="simplert__title">{ title }</b>
+    return (
+      <div
+        role='modal'
+        className={this.classSimplert()}
+        onClick={closeOverlaySimplert.bind(this)}
+      >
+        <div className='simplert__content'>
+          <div className='simplert__header'>
+            <div>{iconDOM}</div>
+            <b className='simplert__title'>{title}</b>
           </div>
-          <div className="simplert__body">
-            <div dangerouslySetInnerHTML={{__html: message}}></div>
+          <div className='simplert__body'>
+            <div dangerouslySetInnerHTML={{ __html: message }} />
           </div>
-          <div className="simplert__footer">
-            {useConfirmBtn && !hideAllButton ? (              
-              <button 
-                  className={ this.classBtnConfirm() }
-                  onClick={ confirmSimplert.bind(this) } >
-                { customConfirmBtnText }
+          <div className='simplert__footer'>
+            {useConfirmBtn && !hideAllButton ? (
+              <button
+                className={this.classBtnConfirm()}
+                onClick={confirmSimplert.bind(this)}
+              >
+                {customConfirmBtnText}
               </button>
-            ) : ''}
+            ) : (
+              ''
+            )}
 
-            {!hideAllButton ? ( 
-              <button 
-                  className={ this.classBtnClose() }
-                  onClick={ closeSimplert.bind(this) } >
-                { customCloseBtnText }
+            {!hideAllButton ? (
+              <button
+                className={this.classBtnClose()}
+                onClick={closeSimplert.bind(this)}
+              >
+                {customCloseBtnText}
               </button>
-            ) : ''}
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </div>
-      
     )
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps (nextProps) {
     let { onOpen } = this.props
     this.setState({ isShowPopup: nextProps.showSimplert })
     if (nextProps.showSimplert && onOpen) onOpen()
@@ -117,15 +128,15 @@ class Simplert extends React.Component {
     let clasz = `simplert__confirm ${customConfirmBtnClass}`
     return clasz
   }
-  
+
   classBtnClose () {
     let { customCloseBtnClass } = this.props
     let clasz = `simplert__close ${customCloseBtnClass}`
-    return clasz    
+    return clasz
   }
 
   createMessageHTML (message) {
-    return {__html: message}
+    return { __html: message }
   }
 
   // Event
@@ -145,18 +156,20 @@ class Simplert extends React.Component {
 
   closeOverlaySimplert (e) {
     let { disableOverlayClick } = this.props
-    if (e.target.className.indexOf('simplert--shown') > 0 && !disableOverlayClick) {
+    if (
+      e.target.className.indexOf('simplert--shown') > 0 &&
+      !disableOverlayClick
+    ) {
       this.setState({ isShowPopup: false })
-    }    
+    }
   }
-
 }
 
 // The Props
 Simplert.propTypes = {
   showSimplert: PropTypes.bool.isRequired,
   title: PropTypes.string,
-  message: PropTypes.any,        
+  message: PropTypes.any,
   type: PropTypes.string,
   customClass: PropTypes.string,
   customIconUrl: PropTypes.string,
@@ -172,17 +185,17 @@ Simplert.propTypes = {
   hideAllButton: PropTypes.bool
 }
 
-const DEFAULT_TYPE = "info"
-const DEFAULT_BTN_CLOSE_TEXT = "Close"
-const DEFAULT_BTN_CONFIRM_TEXT = "Confirm"
-const INVALID_TYPE = "INVALID_TYPE"
+const DEFAULT_TYPE = 'info'
+const DEFAULT_BTN_CLOSE_TEXT = 'Close'
+const DEFAULT_BTN_CONFIRM_TEXT = 'Confirm'
+const INVALID_TYPE = 'INVALID_TYPE'
 
 Simplert.defaultProps = {
   // hide/show alert
   showSimplert: false,
   // basic setup
   title: '',
-  message: '',        
+  message: '',
   type: DEFAULT_TYPE, // info (default), success, warning, error
   customClass: '',
   customIconUrl: '',
