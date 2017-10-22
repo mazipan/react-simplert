@@ -10,6 +10,7 @@
     "build": "webpack --config webpack.config.js",
     "dist": "webpack --config webpack.dist.config.js",
     "dev": "npm run build && webpack-dev-server --inline --hot --open",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -- .",
     "format": "prettier-standard 'src/**/*.js'"
   },
