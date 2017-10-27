@@ -152,12 +152,17 @@ class Simplert extends React.Component {
   }
 
   closeOverlaySimplert (e) {
-    let { disableOverlayClick } = this.props
+    let { disableOverlayClick, onClose, onOverlayClose } = this.props
     if (
       e.target.className.indexOf('simplert--shown') > 0 &&
       !disableOverlayClick
     ) {
       this.setState({ isShowPopup: false })
+      if (onOverlayClose) {
+        onOverlayClose()
+      } else if (onClose) {
+        onClose()
+      }
     }
   }
 }
@@ -174,6 +179,7 @@ Simplert.propTypes = {
   customCloseBtnText: PropTypes.string,
   customCloseBtnClass: PropTypes.string,
   onClose: PropTypes.func,
+  onOverlayClose: PropTypes.func,
   useConfirmBtn: PropTypes.bool,
   customConfirmBtnText: PropTypes.string,
   customConfirmBtnClass: PropTypes.string,
@@ -202,6 +208,7 @@ Simplert.defaultProps = {
   customCloseBtnText: DEFAULT_BTN_CLOSE_TEXT,
   customCloseBtnClass: '',
   onClose: null,
+  onOverlayClose: null,
   // confirm button
   useConfirmBtn: false,
   customConfirmBtnText: DEFAULT_BTN_CONFIRM_TEXT,
