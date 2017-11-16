@@ -55,6 +55,7 @@ Just set _the props_ with your custom state.
   customCloseBtnText: PropTypes.string,
   customCloseBtnClass: PropTypes.string,
   onClose: PropTypes.func,
+  onOverlayClose: PropTypes.func,
   useConfirmBtn: PropTypes.bool,
   customConfirmBtnText: PropTypes.string,
   customConfirmBtnClass: PropTypes.string,
@@ -63,6 +64,8 @@ Just set _the props_ with your custom state.
   hideAllButton: PropTypes.bool
 }
 ```
+
+_Note:_ If `onClose` is provided but `onOverlayClose` is not, `onClose` will be called when the `Simplert` is closed via the overlay.
 
 
 
